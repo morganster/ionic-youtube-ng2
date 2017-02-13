@@ -6,3 +6,4 @@ a youtube client writed in ionic 2
 3. gulp build
 4. ionic platform add android.
 
+https://piratesofjs.wordpress.com/2017/02/13/ionic-2-app-tutorial-a-simple-youtube-player/#more-467
