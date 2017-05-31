@@ -1,6 +1,6 @@
 # Ionic-youtube-ng2
 a youtube client writed in ionic 3 (updated to work with version 3)
-* this project originally was intended to give an ilustration og the youtube api working with ionic 2. but it was update to work with ionic 3, so
+* this project originally was intended to give an illustration og the youtube api working with ionic 2. but it was update to work with ionic 3, so
     is no longer working on ionic 2.
 
 # Ionic support
