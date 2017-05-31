@@ -1,9 +1,5 @@
 import { Component } from '@angular/core';
-
-
-
 import { NavController,LoadingController } from 'ionic-angular';
-
 import { YoutubeService } from '../../services/youtube.service'
 import {PlayerService} from '../../services/player.service';
 
@@ -18,7 +14,6 @@ export class HomePage {
   search = {
     params:''
   };
-
 
   constructor(public navCtrl: NavController,public player: PlayerService,public youtubeService: YoutubeService,public loadingCtrl:LoadingController) {
     player.setupPlayer();

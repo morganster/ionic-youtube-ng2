@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { window } from '@angular/platform-browser/src/facade/browser';
-
 
 @Injectable()
 export class PlayerService {
@@ -14,8 +12,8 @@ export class PlayerService {
     playerWidth: '640'
   }
 
-  constructor () {
-      this.setupPlayer();
+  constructor() {
+    this.setupPlayer();
   }
 
   bindPlayer(elementId): void {
@@ -23,7 +21,7 @@ export class PlayerService {
   };
 
   createPlayer(): void {
-    return new window.YT.Player(this.youtube.playerId, {
+    return new window['YT'].Player(this.youtube.playerId, {
       height: this.youtube.playerHeight,
       width: this.youtube.playerWidth,
       playerVars: {
@@ -36,32 +34,29 @@ export class PlayerService {
   loadPlayer(): void {
     if (this.youtube.ready && this.youtube.playerId) {
       if (this.youtube.player) {
-      this.youtube.player.destroy();
+        this.youtube.player.destroy();
       }
       this.youtube.player = this.createPlayer();
-      console.log(this.createPlayer());
-      console.log('create player');
-      console.log(this.youtube.player);
     }
   }
 
-  setupPlayer () {
+  setupPlayer() {
     //we need to check if the api is loaded
     window['onYouTubeIframeAPIReady'] = () => {
       if (window['YT']) {
-         this.youtube.ready = true;
-         this.bindPlayer('placeholder');
-         this.loadPlayer();
+        this.youtube.ready = true;
+        this.bindPlayer('placeholder');
+        this.loadPlayer();
       }
     };
-    if (window.YT && window.YT.Player) {
-         this.youtube.ready = true;
-         this.bindPlayer('placeholder');
-         this.loadPlayer();
+    if (window['YT'] && window['YT'].Player) {
+      this.youtube.ready = true;
+      this.bindPlayer('placeholder');
+      this.loadPlayer();
     }
   }
 
-  launchPlayer(id):void {    
+  launchPlayer(id): void {
     this.youtube.player.loadVideoById(id);
     this.youtube.videoId = id;
     return this.youtube;
